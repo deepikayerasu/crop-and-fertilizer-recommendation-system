@@ -1,6 +1,3 @@
-# =========================================
-# SMART AGRICULTURE - ADVANCED TRAINING
-# =========================================
 
 import pandas as pd
 import pickle
@@ -16,9 +13,7 @@ from sklearn.preprocessing import LabelEncoder
 # Create models directory
 os.makedirs("models", exist_ok=True)
 
-# =====================================
-# 1️⃣ CROP RECOMMENDATION MODEL
-# =====================================
+
 
 print("\n========== CROP RECOMMENDATION ==========\n")
 
@@ -68,9 +63,7 @@ pickle.dump(best_accuracy, open("models/crop_accuracy.pkl", "wb"))
 print("Crop model saved successfully!\n")
 
 
-# =====================================
-# 2️⃣ FERTILIZER RECOMMENDATION MODEL
-# =====================================
+
 
 print("\n========== FERTILIZER RECOMMENDATION ==========\n")
 
@@ -127,3 +120,4 @@ pickle.dump(le_fertilizer, open("models/le_fertilizer.pkl", "wb"))
 pickle.dump(best_accuracy_fert, open("models/fertilizer_accuracy.pkl", "wb"))
 
 print("Fertilizer model saved successfully!")
+
