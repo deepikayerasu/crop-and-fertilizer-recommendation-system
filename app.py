@@ -17,20 +17,18 @@ le_fertilizer = pickle.load(open("models/le_fertilizer.pkl", "rb"))
 
 st.set_page_config(page_title="Smart Agriculture ML", layout="wide")
 
-st.title("🌾 Smart Agriculture Recommendation System")
+st.title("Smart Agriculture Recommendation System")
 
 menu = st.sidebar.selectbox(
     "Choose Service",
     ["Crop Recommendation", "Fertilizer Recommendation"]
 )
 
-# =====================================
-# 🌱 CROP SECTION
-# =====================================
+
 
 if menu == "Crop Recommendation":
 
-    st.header("🌱 Crop Recommendation")
+    st.header("Crop Recommendation")
 
     col1, col2 = st.columns(2)
 
@@ -68,13 +66,11 @@ if menu == "Crop Recommendation":
 
             st.pyplot(fig)
 
-# =====================================
-# 🌿 FERTILIZER SECTION
-# =====================================
+
 
 if menu == "Fertilizer Recommendation":
 
-    st.header("🌿 Fertilizer Recommendation")
+    st.header("Fertilizer Recommendation")
 
     soil = st.selectbox("Soil Type", le_soil.classes_)
     crop = st.selectbox("Crop Type", le_crop.classes_)
@@ -102,3 +98,4 @@ if menu == "Fertilizer Recommendation":
 
         st.success(f"Recommended Fertilizer: {fertilizer[0]}")
         st.info(f"Model Accuracy: {round(fert_accuracy*100,2)}%")
+
